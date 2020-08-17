@@ -21,8 +21,7 @@ class CreateLibroTable extends Migration
     public function up()
     {
         Schema::create($this->tableName, function (Blueprint $table) {
-            $table->engine = 'InnoDB';
-            $table->increments('idLIBROS');
+            $table->id();
             $table->string('TITULO', 45)->nullable();
             $table->string('AUTOR', 45)->nullable();
             $table->integer('CANTIDAD_EJEMPLARES')->nullable();

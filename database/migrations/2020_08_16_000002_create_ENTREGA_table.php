@@ -21,8 +21,7 @@ class CreateEntregaTable extends Migration
     public function up()
     {
         Schema::create($this->tableName, function (Blueprint $table) {
-            $table->engine = 'InnoDB';
-            $table->increments('idENTREGA');
+            $table->id();
             $table->integer('TELEFONO1')->nullable();
             $table->integer('TELEFONO2')->nullable();
             $table->integer('CEDULA_CLIENTE')->nullable();
@@ -30,13 +29,13 @@ class CreateEntregaTable extends Migration
             $table->integer('PRESTAMO_idPRESTAMO');
             $table->integer('PRESTAMO_LIBRO_idLIBROS');
 
-            $table->index(["PRESTAMO_idPRESTAMO", "PRESTAMO_LIBRO_idLIBROS"], 'fk_ENTREGA_PRESTAMO1_idx');
+            // $table->index(["PRESTAMO_idPRESTAMO", "PRESTAMO_LIBRO_idLIBROS"], 'fk_ENTREGA_PRESTAMO1_idx');
 
 
-            $table->foreign('PRESTAMO_idPRESTAMO', 'fk_ENTREGA_PRESTAMO1_idx')
-                ->references('idPRESTAMO')->on('PRESTAMO')
-                ->onDelete('no action')
-                ->onUpdate('no action');
+            // $table->foreign('PRESTAMO_idPRESTAMO', 'fk_ENTREGA_PRESTAMO1_idx')
+            //     ->references('idPRESTAMO')->on('PRESTAMO')
+            //     ->onDelete('no action')
+            //     ->onUpdate('no action');
         });
     }
 
