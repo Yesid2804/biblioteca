@@ -16,6 +16,7 @@ class LibroController extends Controller
     public function index()
     {
         $libros = DB::select("SELECT * FROM libros");
+        
         return $libros;
     }
 
