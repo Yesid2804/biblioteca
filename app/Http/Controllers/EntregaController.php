@@ -3,10 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
-use Symfony\Component\HttpFoundation\Response;
 
-class LibroController extends Controller
+class EntregaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +13,19 @@ class LibroController extends Controller
      */
     public function index()
     {
-        $libros = DB::select("SELECT * FROM libro");
+        $entregas = DB::select("SELECT * FROM entrega");
         
-        return $libros;
+        return $entregas;
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        //
     }
 
     /**
@@ -28,7 +36,7 @@ class LibroController extends Controller
      */
     public function store(Request $request)
     {
-        $res = DB::select('INSERT INTO libro(titulo, autor, ejemplares) VALUES("'.$request->titulo.'","'.$request->autor.'", "'.$request->ejemplares.'")');
+        $res = DB::select('INSERT INTO entrega(telefono, cedula, fechaEntrega) VALUES("'.$request->telefono.'","'.$request->cedula.'","'.$request->fechaEntrega.'")');
         return $res;
     }
 
@@ -40,8 +48,19 @@ class LibroController extends Controller
      */
     public function show($id)
     {
-        $res = DB::select('SELECT * FROM libro where id = '.$id);
+        $res = DB::select('SELECT * FROM entrega where id = '.$id);
         return $res;
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
+        //
     }
 
     /**
@@ -53,7 +72,7 @@ class LibroController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $res = DB::select('UPDATE libro SET titulo = '.$request->titulo.', '.$request->autor.', '.$request->ejemplares.', where id = '.$id);
+        $res = DB::select('UPDATE entrega SET titulo = '.$request->telefono.', '.$request->cedula.', '.$request->fechaEntrega.', where id = '.$id);
         return $res;
     }
 
@@ -65,8 +84,6 @@ class LibroController extends Controller
      */
     public function destroy($id)
     {
-        $res = DB::select('DELETE libro where id = '.$id);
-
-        return $res;
+        //
     }
 }
