@@ -13,7 +13,9 @@ class PrestamoController extends Controller
      */
     public function index()
     {
-        //
+        $prestamos = DB::select("SELECT * FROM prestamo");
+        
+        return $prestamos;
     }
 
     /**
@@ -34,7 +36,8 @@ class PrestamoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $res = DB::select('INSERT INTO prestamo(nombre, cedula, estado, fechaprestamo) VALUES("'.$request->nombre.'","'.$request->cedula.'", "'.$request->estado.'", "'.$request->fechaprestamo.'")');
+        return $res;
     }
 
     /**
@@ -45,7 +48,8 @@ class PrestamoController extends Controller
      */
     public function show($id)
     {
-        //
+        $res = DB::select('SELECT * FROM prestamo where id = '.$id);
+        return $res;
     }
 
     /**
@@ -68,7 +72,8 @@ class PrestamoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $res = DB::select('UPDATE prestamo SET titulo = '.$request->nombre.', '.$request->cedula.', '.$request->estado.', '.$request->fechaprestamo.', where id = '.$id);
+        return $res;
     }
 
     /**
@@ -79,7 +84,7 @@ class PrestamoController extends Controller
      */
     public function destroy($id)
     {
-        $res = DB::select('DELETE entrega where id = '.$id);
+        $res = DB::select('DELETE prestamo where id = '.$id);
 
         return $res;
     }
