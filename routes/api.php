@@ -19,5 +19,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::resource('libro', 'LibroController');
-
+Route::resource('prestamo', 'PrestamoController');
+Route::resource('entrega', 'EntregaController');
 
