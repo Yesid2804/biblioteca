@@ -22,9 +22,9 @@ class CreateLibroTable extends Migration
     {
         Schema::create($this->tableName, function (Blueprint $table) {
             $table->id();
-            $table->string('TITULO', 45)->nullable();
-            $table->string('AUTOR', 45)->nullable();
-            $table->integer('CANTIDAD_EJEMPLARES')->nullable();
+            $table->string('titulo', 45)->nullable();
+            $table->string('autor', 45)->nullable();
+            $table->integer('cantidad_Ejemplares')->nullable();
         });
     }
 

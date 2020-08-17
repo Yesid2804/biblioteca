@@ -22,11 +22,11 @@ class CreatePrestamoTable extends Migration
     {
         Schema::create($this->tableName, function (Blueprint $table) {
             $table->id();
-            $table->string('NOMBRE_CLIENTE', 45)->nullable();
-            $table->integer('CEDULA_CLIENTE')->nullable();
-            $table->string('ESTADO_PRESTAMO', 40)->nullable();
-            $table->date('FECHA_PRESTAMO')->nullable();
-            $table->integer('LIBRO_idLIBROS');
+            $table->string('nombre_Cliente', 45)->nullable();
+            $table->integer('cedula_Cliente')->nullable();
+            $table->string('estado_Prestamo', 40)->nullable();
+            $table->date('fecha_Prestamo')->nullable();
+         
 
             // $table->index(["LIBRO_idLIBROS"], 'fk_PRESTAMO_LIBRO_idx');
 

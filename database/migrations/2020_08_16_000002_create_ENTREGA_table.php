@@ -22,13 +22,10 @@ class CreateEntregaTable extends Migration
     {
         Schema::create($this->tableName, function (Blueprint $table) {
             $table->id();
-            $table->integer('TELEFONO1')->nullable();
-            $table->integer('TELEFONO2')->nullable();
-            $table->integer('CEDULA_CLIENTE')->nullable();
-            $table->date('FECHA_ENTREGA')->nullable();
-            $table->integer('PRESTAMO_idPRESTAMO');
-            $table->integer('PRESTAMO_LIBRO_idLIBROS');
-
+            $table->integer('telefono1')->nullable();
+            $table->integer('cedula_Cliente')->nullable();
+            $table->date('fecha_Entrega')->nullable();
+          
             // $table->index(["PRESTAMO_idPRESTAMO", "PRESTAMO_LIBRO_idLIBROS"], 'fk_ENTREGA_PRESTAMO1_idx');
 
 
