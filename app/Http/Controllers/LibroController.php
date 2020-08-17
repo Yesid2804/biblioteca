@@ -15,7 +15,7 @@ class LibroController extends Controller
      */
     public function index()
     {
-        $libros = DB::select("SELECT * FROM libros");
+        $libros = DB::select("SELECT * FROM libro");
         
         return $libros;
     }
@@ -28,7 +28,7 @@ class LibroController extends Controller
      */
     public function store(Request $request)
     {
-        $res = DB::select('INSERT INTO libros(titulo, autor) VALUES("'.$request->titulo.'","'.$request->autor.'")');
+        $res = DB::select('INSERT INTO libro(titulo, autor) VALUES("'.$request->titulo.'","'.$request->autor.'")');
         return $res;
     }
 
@@ -40,7 +40,7 @@ class LibroController extends Controller
      */
     public function show($id)
     {
-        $res = DB::select('SELECT * FROM libros where id = '.$id);
+        $res = DB::select('SELECT * FROM libro where id = '.$id);
         return $res;
     }
 
@@ -53,7 +53,7 @@ class LibroController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $res = DB::select('UPDATE libros SET titulo = '.$request->titulo.', '.$request->autor.' where id = '.$id);
+        $res = DB::select('UPDATE libro SET titulo = '.$request->titulo.', '.$request->autor.' where id = '.$id);
         return $res;
     }
 
@@ -65,7 +65,7 @@ class LibroController extends Controller
      */
     public function destroy($id)
     {
-        $res = DB::select('DELETE libros where id = '.$id);
+        $res = DB::select('DELETE libro where id = '.$id);
 
         return $res;
     }
