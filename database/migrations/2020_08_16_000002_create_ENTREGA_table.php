@@ -22,7 +22,7 @@ class CreateEntregaTable extends Migration
     {
         Schema::create($this->tableName, function (Blueprint $table) {
             $table->id();
-            $table->integer('telefono1')->nullable();
+            $table->integer('telefono')->nullable();
             $table->integer('cedula_Cliente')->nullable();
             $table->date('fecha_Entrega')->nullable();
           
