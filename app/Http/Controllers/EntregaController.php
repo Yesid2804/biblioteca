@@ -84,6 +84,8 @@ class EntregaController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $res = DB::select('DELETE prestamo where id = '.$id);
+
+        return $res;
     }
 }
