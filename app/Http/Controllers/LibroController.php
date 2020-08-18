@@ -28,7 +28,8 @@ class LibroController extends Controller
      */
     public function store(Request $request)
     {
-        $res = DB::select('INSERT INTO libro(titulo, autor, ejemplares) VALUES("'.$request->titulo.'","'.$request->autor.'", "'.$request->ejemplares.'")');
+        // return 'INSERT INTO libro(titulo, autor, ejemplares) VALUES("'.$request->titulo.'","'.$request->autor.'", '.$request->ejemplares.')';
+        $res = DB::select('INSERT INTO libro(titulo, autor, cantidad_Ejemplares) VALUES("'.$request->titulo.'","'.$request->autor.'", '.$request->ejemplares.')');
         return $res;
     }
 
